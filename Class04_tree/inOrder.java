@@ -9,8 +9,16 @@
  * }
  */
 public class Solution {
-  // 1. Iteration with stack
   /*
+  1. Create empty stack and initialize current node as root 
+  2. Push current node to stack and curr = curr->left untill curr is NULL
+  3. If curr is null and stack is not empty:
+    a. pop top item from stack
+    b. visit poped node and curr = curr->right
+    c. go to step2
+  4. Done when curr == null && stack.isEmpty
+  */
+  // 1. Iteration with stack
   public List<Integer> inOrder(TreeNode root) {
     // Write your solution here.
     List<Integer> result = new ArrayList<Integer>();
