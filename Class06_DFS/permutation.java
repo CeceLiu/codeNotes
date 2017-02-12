@@ -10,10 +10,12 @@ public class Solution {
   }
   
   public void permutation(char[] array, int index, List<String> solu){
+    // new String then add to list also return
     if (index == array.length){
       solu.add(new String(array));
       return;
     }
+    // for loop to control which index to check
     for(int i=index; i<array.length; i++){
       swap(array, i, index);
       permutation(array, index+1, solu);
