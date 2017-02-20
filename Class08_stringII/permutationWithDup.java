@@ -14,6 +14,7 @@ public class Solution {
       solu.add(new String(array));
       return;
     }
+    // HashSet to check if the item in array has been used
     HashSet<Character> used = new HashSet<Character>();
     for(int i=index; i<array.length; i++){
       if (!used.contains(array[i])){
