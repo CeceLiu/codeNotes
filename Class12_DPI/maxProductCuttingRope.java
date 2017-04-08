@@ -15,6 +15,9 @@ public class Solution {
                   array[i],
                   j * Math.max(i-j, array[i-j])
                   );
+
+      // int currM = j * Math.max(i-j, array[i-j]);
+      // array[i] = Math.max( array[i], currM);
     }
     return array[length];
   }
