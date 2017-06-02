@@ -1,4 +1,6 @@
 public class Solution {
+
+  /* Method one
   public int[] mergeSort(int[] array) {
     if (array == null || array.length <=1){
       return array;
@@ -38,4 +40,43 @@ public class Solution {
     }
     return array;
   }
+  */
+
+  // Mehod two
+  public int[] mergeSort(int[] array) {
+    // Write your solution here.
+    if(array==null || array.length<1)
+      return array;
+    int[] helper = new int[array.length];
+    // 0-n
+    mergeSort(helper, 0, array.length-1, array);
+    return array;
+  }
+  
+  public void mergeSort(int[] helper, int left, int right, int[] array){
+    // top-down split merge
+    if(left>=right)
+      return;
+    int midd = left + (right-left)/2;
+    mergeSort(helper, left, midd, array);
+    mergeSort(helper, midd+1, right, array);
+    merge(helper, left, midd, right, array);
+  }
+  
+  public void merge(int[] helper, int left, int midd, int right, int[] array){
+    // copy from array to res for elements between left/right
+    for(int i=left; i<=right; i++)
+      helper[i] = array[i];
+    int leftIdx = left;
+    int rightIdx = midd+1;
+    while(leftIdx<=midd && rightIdx<=right){
+      if(helper[leftIdx] <= helper[rightIdx])
+        array[left++] = helper[leftIdx++];
+      else
+        array[left++] = helper[rightIdx++];
+    }
+    while(leftIdx<=midd)
+      array[left++] = helper[leftIdx++];
+  }
+
 }
