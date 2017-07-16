@@ -30,12 +30,16 @@ public class Solution {
     reverse(array, midd, rightMidd-1);
     reverse(array, leftMidd, rightMidd-1); // CD12 -> DC21 -> 12CD
     
-    /*
-    reorder(array, left, left + 2*(leftMidd-left)-1);
-    reorder(array, left+2*(leftMidd-left), right);
-    */
+    // for 1,4,2,3,5,6 => 1,4|2,3,5,6 instead of 1,4,2|3,5,6
+    int leftEnd = left + 2*(leftMidd-left) -1;
+    reorder(array, left, leftEnd;
+    reorder(array, leftEnd+1, right);
+  
+    /* WRONG ANSWER: {1,2,3,4,5,6} => 4,1,2,5,3,6
     reorder(array, left, midd-1);
     reorder(array, midd, right);
+    */
+
   }
   
   private void reverse(int[] array, int left, int right){
