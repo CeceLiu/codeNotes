@@ -32,7 +32,7 @@ public class Solution {
     
     // for 1,4,2,3,5,6 => 1,4|2,3,5,6 instead of 1,4,2|3,5,6
     int leftEnd = left + 2*(leftMidd-left) -1;
-    reorder(array, left, leftEnd;
+    reorder(array, left, leftEnd);
     reorder(array, leftEnd+1, right);
   
     /* WRONG ANSWER: {1,2,3,4,5,6} => 4,1,2,5,3,6
